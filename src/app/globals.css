@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+
+    --border: 214.3 31.8% 91.4%;
+
+    --muted-background: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --card-background: var(--background);
+    --card-foreground: 213 31% 91%;
+  }
+
+  * {
+    @apply border-border;
+    scrollbar-color: var(--foreground) var(--background);
+    scrollbar-width: thin;
+  }
+
+  body {
+    @apply bg-background font-sans text-foreground;
+  }
+}
+
+@layer components {
+  .work-card-technology-icon {
+    @apply size-6 text-white;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
