@@ -1,0 +1,26 @@
+---
+import "~/styles/global.css";
+import "@fontsource/uncut-sans";
+import Header from "~/components/header.astro";
+import Footer from "~/components/footer.astro";
+import CommonHead from "~/components/common-head.astro";
+
+interface Props {
+  title: string;
+  locale?: string;
+}
+
+const { title, locale = "en" } = Astro.props;
+---
+
+<html lang={locale}>
+  <head>
+    <CommonHead {title} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header {locale} />
+    <slot />
+    <Footer {locale} />
+  </body>
+</html>

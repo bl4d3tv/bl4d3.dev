@@ -1,0 +1,18 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import Spanish from "~/components/flags/spanish.astro";
+import English from "~/components/flags/english.astro";
+
+interface Props {
+  locale: string;
+}
+
+const { locale } = Astro.props;
+const path = getRelativeLocaleUrl(locale === "en" ? "es" : "en");
+---
+
+<header class="flex w-full p-4 justify-end">
+  <a href={path} aria-label="Change Language">
+    {locale === "en" ? <Spanish /> : <English />}
+  </a>
+</header>

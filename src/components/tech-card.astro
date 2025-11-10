@@ -1,0 +1,16 @@
+---
+interface Props {
+  name: string;
+}
+
+const { name } = Astro.props;
+---
+
+<div
+  class="w-full p-4 rounded-xl bg-neutral-800 items-center justify-center md:justify-start flex md:space-x-5 text-neutral-400"
+>
+  <div class="size-8">
+    <slot />
+  </div>
+  <span class="hidden md:block">{name}</span>
+</div>

@@ -1,0 +1,12 @@
+[
+    {
+        "name": "DiscoRS",
+        "description": "Bot de música de Discord escrito en Rust.",
+        "link": "https://github.com/bl4d3tv/DiscoRS"
+    },
+    {
+        "name": "ChestLoot",
+        "description": "Mod de Minecraft Fabric 1.19.4 que inserta una tabla de loot dentro de un cofre dependiendo del bioma en el que se encuentra al interactuar con él.",
+        "link": "https://github.com/bl4d3tv/ChestLoot"
+    }
+]
