@@ -1,7 +1,7 @@
 ---
-import { getRelativeLocaleUrl } from "astro:i18n";
 import Spanish from "~/components/flags/spanish.astro";
 import English from "~/components/flags/english.astro";
+import { getRelativeLocaleUrl } from "astro:i18n";
 
 interface Props {
   locale: string;
@@ -9,6 +9,7 @@ interface Props {
 
 const { locale } = Astro.props;
 const path = getRelativeLocaleUrl(locale === "en" ? "es" : "en");
+console.log(path, locale);
 ---
 
 <header class="flex w-full p-4 justify-end">
