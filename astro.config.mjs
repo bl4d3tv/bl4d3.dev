@@ -5,9 +5,12 @@ import tailwindcss from "@tailwindcss/vite";
 
 import sitemap from "@astrojs/sitemap";
 
+import cloudflare from "@astrojs/cloudflare";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://bl4d3.dev",
+
   vite: {
     plugins: [tailwindcss()],
   },
@@ -29,4 +32,8 @@ export default defineConfig({
       },
     }),
   ],
+
+  adapter: cloudflare({
+    imageService: "compile",
+  }),
 });

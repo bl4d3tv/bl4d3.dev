@@ -2,7 +2,6 @@ import type { APIContext, MiddlewareNext } from "astro";
 import { middleware } from "astro:i18n";
 import { sequence } from "astro:middleware";
 
-
 const i18nMiddleware = (ctx: APIContext, next: MiddlewareNext) => {
   if (ctx.isPrerendered) return next();
 
@@ -13,6 +12,8 @@ const i18nMiddleware = (ctx: APIContext, next: MiddlewareNext) => {
     "/_images",
     "/_server-islands",
     "/_actions",
+    "/_astro",
+    "/.well-known",
   ];
 
   if (resourcePaths.some((path) => ctx.url.pathname.includes(path)))
@@ -42,13 +43,13 @@ const i18nMiddleware = (ctx: APIContext, next: MiddlewareNext) => {
   }
 
   return next();
-}
+};
 
 export const onRequest = sequence(
   i18nMiddleware,
   middleware({
     redirectToDefaultLocale: false,
     prefixDefaultLocale: true,
-    fallbackType: "redirect"
+    fallbackType: "redirect",
   })
 );
