@@ -10,6 +10,7 @@ import cloudflare from "@astrojs/cloudflare";
 // https://astro.build/config
 export default defineConfig({
   site: "https://bl4d3.dev",
+  trailingSlash: "never",
 
   vite: {
     plugins: [tailwindcss()],
@@ -18,7 +19,10 @@ export default defineConfig({
   i18n: {
     locales: ["en", "es"],
     defaultLocale: "en",
-    routing: "manual",
+    routing: {
+      prefixDefaultLocale: true,
+      redirectToDefaultLocale: true,
+    },
   },
 
   integrations: [
