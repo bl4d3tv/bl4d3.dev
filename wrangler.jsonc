@@ -1,15 +1,15 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "bl4d3-dot-dev",
-  "main": "./dist/_worker.js/index.js",
-  "compatibility_date": "2025-11-05",
+  "main": "@astrojs/cloudflare/entrypoints/server",
+  "compatibility_date": "2026-03-10",
   "assets": {
     "binding": "ASSETS",
     "directory": "./dist",
     "not_found_handling": "404-page", // If you have a custom `src/pages/404.astro` page
-    "run_worker_first": ["/"] // Required so middleware can run on the index and redirect properly
+    "run_worker_first": ["/"], // Required so middleware can run on the index and redirect properly
   },
   "observability": {
-    "enabled": true
-  }
+    "enabled": true,
+  },
 }
