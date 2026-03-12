@@ -20,6 +20,10 @@ export default defineConfig({
     },
   ],
 
+  security: {
+    csp: true,
+  },
+
   vite: {
     plugins: [tailwindcss()],
   },
