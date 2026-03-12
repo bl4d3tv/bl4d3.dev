@@ -9,7 +9,6 @@ interface Props {
 
 const { locale } = Astro.props;
 const path = getRelativeLocaleUrl(locale === "en" ? "es" : "en");
-console.log(path, locale);
 ---
 
 <header class="flex w-full p-4 justify-end">

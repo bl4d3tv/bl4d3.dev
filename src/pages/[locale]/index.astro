@@ -1,105 +1,46 @@
 ---
 import type { GetStaticPaths } from "astro";
-import SectionTitle from "~/components/section-title.astro";
 import Layout from "~/layouts/layout.astro";
 import { useTranslations } from "~/lib/i18n";
-import Azure from "~/components/tech/azure.astro";
-import TechCard from "~/components/tech-card.astro";
-import Project from "~/components/project.astro";
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import logo from "~/assets/logo.png";
 
 export const getStaticPaths = (() => {
   return [{ params: { locale: "en" } }, { params: { locale: "es" } }];
 }) satisfies GetStaticPaths;
 
 const locale = Astro.params.locale as "en" | "es";
-const t = useTranslations(Astro.params.locale as "en" | "es");
-const projects = (
-  await getCollection("projects", ({ id }) => id === locale)
-).flatMap((entry) => entry.data);
+// const t = useTranslations(Astro.params.locale as "en" | "es");
+// const projects = (
+//   await getCollection("projects", ({ id }) => id === locale)
+// ).flatMap((entry) => entry.data);
 ---
 
 <Layout title="bl4d3tv" {locale}>
-  <main class="flex flex-col max-w-3xl w-full p-4 space-y-5 flex-1">
-    <div class="flex flex-col space-y-8">
-      <div class="flex flex-col">
-        <h1 class="text-2xl font-bold">bl4d3tv</h1>
-        <span class="text-neutral-400 text-sm">{t("title")}</span>
-      </div>
-      <p>
-        {t("description")}
-      </p>
-      <div class="flex space-x-2 items-center">
+  <main
+    class="flex flex-col items-center justify-center max-w-3xl w-full p-4 space-y-5 flex-1"
+  >
+    <div class="flex flex-col items-center justify-center space-y-8">
+      <Image src={logo} alt="" width="256" loading="eager" />
+      <h1 class="text-4xl font-bold">bl4d3tv</h1>
+      <div class="flex space-x-4 items-center">
         <a href="mailto:me@bl4d3.dev" class="social-link"
           ><span class="icon-[tabler--mail] size-8">Email</span></a
         >
         <a href="https://github.com/bl4d3tv" target="_blank" class="social-link"
           ><span class="icon-[simple-icons--github] size-8">GitHub</span></a
         >
+        <a
+          href="https://bsky.app/profile/bl4d3tv.bsky.social"
+          target="_blank"
+          class="social-link"
+          ><span class="icon-[simple-icons--bluesky] size-8">Bluesky</span></a
+        >
+        <a href="https://bl4d3.itch.io/" target="_blank" class="social-link"
+          ><span class="icon-[simple-icons--itchdotio] size-8">Itch.io</span></a
+        >
       </div>
-      <section class="flex flex-col space-y-4">
-        <SectionTitle>{t("tech.title")}</SectionTitle>
-        <p class="text-neutral-400">{t("tech.desc")}</p>
-        <div class="grid grid-cols-3 gap-6">
-          <TechCard name="Astro">
-            <span class="icon-[simple-icons--astro] size-8"></span>
-          </TechCard>
-          <TechCard name="Azure">
-            <Azure />
-          </TechCard>
-          <TechCard name="C#">
-            <span class="icon-[simple-icons--csharp] size-8"></span>
-          </TechCard>
-          <TechCard name="Cloudflare">
-            <span class="icon-[simple-icons--cloudflare] size-8"></span>
-          </TechCard>
-          <TechCard name="Docker">
-            <span class="icon-[simple-icons--docker] size-8"></span>
-          </TechCard>
-          <TechCard name="GCP">
-            <span class="icon-[simple-icons--googlecloud] size-8"></span>
-          </TechCard>
-          <TechCard name="Go">
-            <span class="icon-[simple-icons--go] size-8"></span>
-          </TechCard>
-          <TechCard name="Java">
-            <span class="icon-[simple-icons--openjdk] size-8"></span>
-          </TechCard>
-          <TechCard name="Linux">
-            <span class="icon-[simple-icons--linux] size-8"></span>
-          </TechCard>
-          <TechCard name="Nextjs">
-            <span class="icon-[simple-icons--nextdotjs] size-8"></span>
-          </TechCard>
-          <TechCard name="Node.js">
-            <span class="icon-[simple-icons--nodedotjs] size-8"></span>
-          </TechCard>
-          <TechCard name="React">
-            <span class="icon-[simple-icons--react] size-8"></span>
-          </TechCard>
-          <TechCard name="Rust">
-            <span class="icon-[simple-icons--rust] size-8"></span>
-          </TechCard>
-          <TechCard name="TailwindCSS">
-            <span class="icon-[simple-icons--tailwindcss] size-8"></span>
-          </TechCard>
-          <TechCard name="TypeScript">
-            <span class="icon-[simple-icons--typescript] size-8"></span>
-          </TechCard>
-        </div>
-        <section class="flex flex-col space-y-4">
-          <SectionTitle>{t("projects.title")}</SectionTitle>
-          {
-            projects.map((project) => (
-              <Project
-                name={project.name}
-                description={project.description}
-                link={project.link}
-              />
-            ))
-          }
-        </section>
-      </section>
     </div>
   </main>
 </Layout>
