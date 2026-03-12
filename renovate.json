@@ -1,0 +1,12 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+        ":maintainLockFilesWeekly",
+        ":automergeMinor",
+        "config:best-practices"
+    ],
+    "enabledManagers": [
+        "npm",
+        "github-actions"
+    ]
+}
