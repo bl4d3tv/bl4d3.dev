@@ -4,8 +4,8 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@theme {
-  --font-sans: "Uncut Sans", sans-serif;
+@theme inline {
+  --font-sans: var(--font-uncut-sans);
 }
 
 @layer base {
