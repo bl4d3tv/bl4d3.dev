@@ -26,6 +26,6 @@
     "clsx": "2.1.1",
     "sharp": "0.34.5",
     "tailwind-merge": "3.5.0",
-    "wrangler": "4.81.0"
+    "wrangler": "4.81.1"
   }
 }
