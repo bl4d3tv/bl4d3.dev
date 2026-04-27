@@ -163,8 +163,8 @@ packages:
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
     engines: {node: '>=12'}
 
-  '@cyberalien/svg-utils@1.2.10':
-    resolution: {integrity: sha512-3TTUFe0XZYoCZ1UnSWo+5jmr4VMh/IZkgwGFDifOD2BPMtmnwWYg1w6RA6Qap53PKya/rvSiod9MbU64O+cUfg==}
+  '@cyberalien/svg-utils@1.2.13':
+    resolution: {integrity: sha512-/fEcy0VRnG/7Znmjx6ib4wSbb/ILRmEV6t4b1adFZyTHw64+K+DEAoWp8wKHUV0QmbZ18RFf9VeQtvQm83Fnyg==}
 
   '@emnapi/runtime@1.10.0':
     resolution: {integrity: sha512-ewvYlk86xUoGI0zQRNq/mC+16R1QeDlKQy21Ki3oSYXNgLb45GV1P6A0M+/s6nyCuNDqe5VpaY84BzXGwVbwFA==}
@@ -498,8 +498,8 @@ packages:
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
 
-  '@iconify/utils@3.1.0':
-    resolution: {integrity: sha512-Zlzem1ZXhI1iHeeERabLNzBHdOa4VhQbqAcOQaMKuTuyZCpwKbC2R4Dd0Zo3g9EAc+Y4fiarO8HIHRAth7+skw==}
+  '@iconify/utils@3.1.1':
+    resolution: {integrity: sha512-MwzoDtw9rO1x+qfgLTV/IVXsHDBqeYZoMIQC8SfxfYSlaSUG+oWiAcoiB1yajAda6mqblm4/1/w2E8tRu7a7Tw==}
 
   '@img/colour@1.1.0':
     resolution: {integrity: sha512-Td76q7j57o/tLVdgS746cYARfSyxk8iEfRxewL9h4OMzYhbW4TAcppl0mT4eyqXddh6L/jwoM75mo7ixa/pCeQ==}
@@ -2196,7 +2196,7 @@ snapshots:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
 
-  '@cyberalien/svg-utils@1.2.10':
+  '@cyberalien/svg-utils@1.2.13':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -2373,14 +2373,14 @@ snapshots:
     dependencies:
       '@iconify/tools': 5.0.11
       '@iconify/types': 2.0.0
-      '@iconify/utils': 3.1.0
+      '@iconify/utils': 3.1.1
       tailwindcss: 4.2.4
 
   '@iconify/tools@5.0.11':
     dependencies:
-      '@cyberalien/svg-utils': 1.2.10
+      '@cyberalien/svg-utils': 1.2.13
       '@iconify/types': 2.0.0
-      '@iconify/utils': 3.1.0
+      '@iconify/utils': 3.1.1
       fflate: 0.8.2
       modern-tar: 0.7.6
       pathe: 2.0.3
@@ -2388,7 +2388,7 @@ snapshots:
 
   '@iconify/types@2.0.0': {}
 
-  '@iconify/utils@3.1.0':
+  '@iconify/utils@3.1.1':
     dependencies:
       '@antfu/install-pkg': 1.1.0
       '@iconify/types': 2.0.0
